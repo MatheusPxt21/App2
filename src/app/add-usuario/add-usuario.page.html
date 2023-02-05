@@ -1,16 +1,58 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
 
     <ion-buttons slot="start" (click)="Usuario()">
-      <ion-button color="primary">
+      <ion-button color="success">
         <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <ion-title>users</ion-title>
+    <ion-title>Users</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="padding">
+
+  <ion-item>
+    <ion-label position="floating">
+      Name
+    </ion-label>
+    <ion-input [(ngModel)]="nome" [clearInput]="true">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">
+      User
+    </ion-label>
+    <ion-input [(ngModel)]="usuario" [clearInput]="true">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">
+      Password
+    </ion-label>
+    <ion-input type="password" value="password" [(ngModel)]="senha" [clearInput]="true">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">
+      Level
+    </ion-label>
+    <ion-input [(ngModel)]="nivel" [clearInput]="true">
+    </ion-input>
+  </ion-item>
+
+  <h1>
+
+  </h1>
+
+
+  <ion-button *ngIf="id" color="tertiary" (click)="editar()">Edite</ion-button>
+
+  <ion-button  *ngIf="!id" color="primary" (click)="cadastrar()" shape="round" fill="outline">Save</ion-button>
+
 
 </ion-content>
