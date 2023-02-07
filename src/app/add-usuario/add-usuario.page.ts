@@ -52,7 +52,7 @@ export class AddUsuarioPage implements OnInit {
       };
       
       this.provider.dadosApi(dados, 'api.php').subscribe(data => {
-        this.route.navigate(['usuarios.php']);
+        this.route.navigate(['/usuarios.php']);
         this.ToastMensagemSalvar();
 
       });

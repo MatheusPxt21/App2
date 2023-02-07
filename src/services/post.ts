@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import 'rxjs-compat/add/operator/map'
-
+//import 'rxjs-compat/add/operator/map'
+import { map } from "rxjs/operators";
 
 
 @Injectable()
@@ -19,7 +19,7 @@ export class Post{
     }
 
     let url = this.server + api;
-    return this.http.post(url, JSON.stringify(dados), httpOptions).map(res => res);
+    return this.http.post(url, JSON.stringify(dados), httpOptions).pipe(map(res => res));
 
   }
 }
