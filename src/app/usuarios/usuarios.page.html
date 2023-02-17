@@ -22,4 +22,30 @@
   </ion-header>
 
 
+  <!--<ion-row>
+    <ion-col size="9">
+      <ion-item>
+        <ion-input placeholder="Search" [(ngModel)]="nome" type="search" ></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-buttons>
+        <ion-button>
+          <ion-icon slot="end" name="search"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>-->
+
+<!--
+  <ion-searchbar color="light" show-cancel-button="focus" placeholder="Search" [(ngModel)]="nome"></ion-searchbar>
+-->
+  <ion-searchbar color="light" showCancelButton="focus" placeholder="Search" [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let usuario of results" (click)="mostrarUsuario()">
+      <ion-label>{{ usuario }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mostrar-usuario',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MostrarUsuarioPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
+  }
+
+  Usuario()
+  {
+    this.route.navigate(['/usuarios']);
   }
 
 }

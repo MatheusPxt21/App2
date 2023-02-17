@@ -28,7 +28,7 @@ export class AddUsuarioPage implements OnInit {
       duration: 2000,
       position: 'bottom',
       icon: 'checkmark-circle',
-      color: 'success'
+      color: 'primary'
     });
 
     await toast.present();
@@ -50,9 +50,9 @@ export class AddUsuarioPage implements OnInit {
         senha : this.senha,
         nivel : this.nivel,
       };
-      
+
       this.provider.dadosApi(dados, 'api.php').subscribe(data => {
-        this.route.navigate(['/usuarios.php']);
+        this.route.navigate(['/usuarios']);
         this.ToastMensagemSalvar();
 
       });
