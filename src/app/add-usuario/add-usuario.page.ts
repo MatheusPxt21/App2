@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { resolve } from 'dns';
 import { Post } from 'src/services/post';
@@ -16,9 +16,16 @@ export class AddUsuarioPage implements OnInit {
   usuario: string = "";
   senha: string = "";
   nivel: string = "";
-  constructor(private route: Router, private provider: Post, private toastController: ToastController) { }
+  constructor(private actRoute: ActivatedRoute, private route: Router, private provider: Post, private toastController: ToastController) { }
 
   ngOnInit() {
+    this.actRoute.params.subscribe((data: any)=>{
+      this.id = data.id;
+      this.nome = data.nome;
+      this.usuario = data.usuario;
+      this.senha = data.senha;
+      this.nivel = data.nivel;
+    });
   }
 
 
@@ -62,7 +69,23 @@ export class AddUsuarioPage implements OnInit {
 
   editar()
   {
+    return new Promise(resolve => {
+      let dados = {
+        requisicao: 'editar',
+        nome : this.nome,
+        usuario : this.usuario,
+        senha : this.senha,
+        nivel : this.nivel,
+        id: this.id,
+      };
 
+      this.provider.dadosApi(dados, 'api.php').subscribe(data => {
+        this.route.navigate(['/usuarios']);
+        this.ToastMensagemSalvar();
+
+      });
+
+    });
   }
 
   remover()

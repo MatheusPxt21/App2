@@ -72,11 +72,11 @@ export class UsuariosPage implements OnInit {
 
   /*
   editar(id, nome, usuario, senha, nivel){
-    this.router.navigate(['/add-usuario/' + id + '/' + nome + '/' + usuario + '/' + senha + '/' + nivel]);
+    this.route.navigate(['/add-usuario/' + id + '/' + nome + '/' + usuario + '/' + senha + '/' + nivel]);
   }
 
   mostrar(id, nome, usuario, senha, nivel){
-    this.router.navigate(['/mostrar-usuario/' + id + '/' + nome + '/' + usuario + '/' + senha + '/' + nivel]);
+    this.route.navigate(['/mostrar-usuario/' + id + '/' + nome + '/' + usuario + '/' + senha + '/' + nivel]);
   }
   */
 
