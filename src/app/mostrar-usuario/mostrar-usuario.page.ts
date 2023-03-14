@@ -9,12 +9,13 @@ import { Post } from 'src/services/post';
 })
 export class MostrarUsuarioPage implements OnInit {
 
-  
+
   nome: string = "";
   usuario: string = "";
   senha: string = "";
   nivel: string = "";
   id: string = "";
+
 
   constructor(private actRoute: ActivatedRoute, private route: Router, private provider: Post) { }
 
